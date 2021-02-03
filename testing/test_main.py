@@ -16,8 +16,8 @@ class UnitTests(unittest.TestCase) :
         inputs, outputs = [],[]
         for i in range(2,10) : 
             inputs.append((i,))
-            myset = {}
+            myset = set([0])
             for j in range(i) : 
-                for k in range(j) : myset.add(j*k)
+                for k in range(j+1) : myset.add(j*k)
             outputs.append( myset )
         assert( fc.check_func( 'genMultiplications', inputs, outputs ) )
