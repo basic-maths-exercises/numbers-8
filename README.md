@@ -12,8 +12,20 @@ To get you started, I have written some code on the left. This code calculates e
 
 ![](https://render.githubusercontent.com/render/math?math=0\times\0\qquad\0\times\1\qquad\1\times\0\qquad\1\times\1)
 
-It stores the output from each of these calculations in a python list called `numbers`, which is printed out at the end of the code.
+It stores the output from each of these calculations in a new type of python object called a set.  The particular set I am using is here is called `numbers`, which is printed out at the end of the code.
 
-To complete the task, I would like you to write a function called `genMultiplications` which takes a single integer `N` as input.  This function should then return the set of numbers that can be constructed by taking all `N`x`N` possible products of the `N` non-negative integers that are less than `N`.  At variance with what I have done in the code on the left you should ensure that each of the numbers is only included once.  If your function was run for `N=2` the output should thus be `[0,1]`.
+A set is different from a Python list or a NumPy array as:
+
+- The data in a set is unordered and unindexed.  You thus cannot use the square bracket syntax you have seen for NumPy arrays and lists to get the value of the nth element.  You must access the whole set at once.
+- A set cannot contain multiple copies of the same object.  In other words, while you can have a NumPy array that has all N>0 elements that are all equal to zero, you will only ever have one zero in a set.
+
+To create a called myset and add a 2 to it you use commands like these ones:
+
+````
+myset = {}
+myset.add(2)
+```` 
+
+To complete the task, I would like you to write a function called `genMultiplications` which takes a single integer `N` as input.  This function should then return the set of numbers that can be constructed by taking all `N`x`N` possible products of the `N` non-negative integers that are less than `N`.  As you are returning a set here each of the numbers will only only included once.  If your function was run for `N=2` the output should thus be a set containing 0 and 1.
 
 Run your function for various values of `N` before you submit.  Is it possible to generate all the natural numbers by performing multiplications?  What numbers are missing?
